@@ -188,6 +188,10 @@ def main():
                                 else:
                                     print(f"{search_accountname} does not exist")
 
+                            elif short_code == "ex":
+                                print("Exiting credentials........")
+                                break
+
                              
 
 
