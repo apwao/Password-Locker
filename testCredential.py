@@ -21,5 +21,12 @@ class TestCredential(unittest.TestCase):
         Tear down method that cleans up after each test case has run
         """  
         Credential.credentials = []
-        
-          
+
+    def test_init(self):
+        """
+        test_init test case to test whether the object is correctly instantiated
+        """
+        self.assertEqual(self.new_credential.username, "Sowasse")
+        self.assertEqual(self.new_credential.accountname, "Pinterest")
+        self.assertEqual(self.new_credential.password, "sow@yi")
+
