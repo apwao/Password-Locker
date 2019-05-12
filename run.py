@@ -110,7 +110,7 @@ def main():
                     while True:
                         short_code = input("Use these shortcodes to choose an action: \n cc- create new credential \n delc - delete credential \n fc - find credential \n cp - copy credential \n ex - exit credentials \n dc -display credential :\n ").lower()
 
-                            if short_code == "c":
+                            if short_code == "cc":
                                 print("New Credential:")
 
                                 username = input("Please enter your user name: \n")
@@ -133,6 +133,27 @@ def main():
                                         return (result)
 
                                     print ("Your generated password of ",password_length," characters is ", convert(random_password))
+                                    password = input("Please enter the above generated password: \n")
+                                    response = input("Would you like to save the credential you just made? y/n: \n")
+                                    if response == "y":
+                                        saveCredential(create_credential(username, accountname, password))
+                                        print("--" * 10)
+                                        print(f"credentials successfully saved! \n {username} \n {accountname} \n {password}") 
+                                        print("--" * 10)
+
+                            elif short_code == "dc":
+                                if displayCredentials():
+                                    print("Here is a list of all your credentials: \n")
+                                    print("--" * 10)
+                                    for credential in displayCredentials():
+                                        print(f"{credential.username} \n {credential.accountname} \n {credential.passwor}")
+
+                                else:
+                                    print("You dont seem to have any credentials saved")
+
+
+
+                            
                                     
 
 
