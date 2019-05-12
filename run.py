@@ -91,7 +91,7 @@ def main():
     print("Hi {}. What would you like to do?".format(user_name))
 
     while True:
-        userShortCodes = input("Choose a shortcode to pick an action: \n ca - Create Account \n ex - Exit Password Locker:\n")
+        userShortCodes = input("Use these shortcodes to pick an action: \n ca - Create Account \n ex - Exit Password Locker:\n")
 
         if userShortCodes == "ca":
             userName = input("Please enter a user name for account set up:")
@@ -100,7 +100,18 @@ def main():
 
         print("The following are details to your account: \n Username: {} \n password: {}".format(userName, loginPassword))
         username_login = input("Thank you for signing up with us. \n please enter your username to login: ")
-        password_login = input("Please enter your password: ")   
+        password_login = input("Please enter your password: ") 
+
+        if loginPassword == password_login and userName == username_login:
+            if User.display_all():
+                userShortCodes = input("Would you like to proceed to your credentials? Use this short code: \n  sc - See your credential: \n ")
+                if userShortCodes == "sc":
+
+                    while True:
+                        short_code = input("Use these shortcodes to choose an action: \n cc- create new credential \n delc - delete credential \n fc - find credential \n cp - copy credential \n ex - exit credentials \n dc -display credential :\n ")    
+
+
+
 
 
 
