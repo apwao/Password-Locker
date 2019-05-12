@@ -56,7 +56,14 @@ def displayCredentials():
     displayCredentials function to display the credentials currently saved
     """
     return Credential.display_credentials()
+
+def displayUser():
+    """
+    displayUser function to display user details if user has an account
+    """
+    return User.display_all()
     
+
 
 
 
