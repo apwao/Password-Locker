@@ -78,4 +78,15 @@ class TestCredential(unittest.TestCase):
 
         credential_exists = Credential.credential_exists("Twitter")
         self.assertTrue(credential_exists)
+
+    def test_display_all_credentials(self):
+        """
+        test_display_all_credentials test case to test whether a user is able to view all the credentials they have saved within 
+        password locker
+        """
+        self.new_credential.save_credential()
+        test_credential = Credential("Lucas", "Twitter", "lwairore")
+        test_credential.save_credential()
+        self.assertEqual(Credential.display_credentials(), Credential.credentials)
         
+
