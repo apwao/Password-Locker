@@ -32,7 +32,16 @@ class TestCredential(unittest.TestCase):
 
     def test_save_credential(self):
         """
-        test_save_credential method to check whether credential is successfully saved
+        test_save_credential test case to check whether credential is successfully saved
         """
         self.new_credential.save_credential()
         self.assertEqual(len(Credential.credentials), 1)
+
+    def test_save_multiple_credentials(self):
+        """
+        test_save_multiple_credentials test case to check whether a user can save multiple credentials
+        """
+        self.new_credential.save_credential()
+        test_credential = Credential ("Lucas", "Twitter","lwairore")
+        test_credential.save_credential()
+        self.assertEqual(len(Credential.credentials), 2)
