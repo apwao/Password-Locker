@@ -108,7 +108,35 @@ def main():
                 if userShortCodes == "sc":
 
                     while True:
-                        short_code = input("Use these shortcodes to choose an action: \n cc- create new credential \n delc - delete credential \n fc - find credential \n cp - copy credential \n ex - exit credentials \n dc -display credential :\n ")    
+                        short_code = input("Use these shortcodes to choose an action: \n cc- create new credential \n delc - delete credential \n fc - find credential \n cp - copy credential \n ex - exit credentials \n dc -display credential :\n ").lower()
+
+                            if short_code == "c":
+                                print("New Credential:")
+
+                                username = input("Please enter your user name: \n")
+                                accountname = input("Please enter your account name: \n")
+                                password_choice = input("Would you like to have your password auto-generated? y/n : \n ").lower()
+
+                                # Password generator
+                                if password_choice == "n":
+                                    password = input("Please enter your password: \n") 
+
+                                else: 
+                                    password_length = input("What length of password would you like to have? \n ")
+                                    random_password = []
+                                    for i in range (0, int(password_length)): #loop through the number of times equal to preferred length of password
+                                        random_password.append(random.randint(0,9))
+                                    
+                                    def convert (random_password):
+                                        converted = [str(i) for i in random_password]
+                                        result = int("".join(converted))
+                                        return (result)
+
+                                    print ("Your generated password of ",password_length," characters is ", convert(random_password))
+                                    
+
+
+
 
 
 
