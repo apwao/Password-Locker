@@ -85,6 +85,24 @@ def copyPassword(account_name):
     return Credential.copy_password(account_name)
 
 
+def main():
+    user_name = input("Hello, welcome to Password_Locker. What is your name?")
+
+    print("Hi {}. What would you like to do?".format(user_name))
+
+    while True:
+        userShortCodes = input("Choose a shortcode to pick an action: \n ca - Create Account \n ex - Exit Password Locker:\n")
+
+        if userShortCodes == "ca":
+            userName = input("Please enter a user name for account set up:")
+            loginPassword = input("Please enter your password: ")   
+            saveUser(create_user(userName, loginPassword))
+
+        print("The following are details to your account: \n Username: {} \n password: {}".format(userName, loginPassword))
+        username_login = input("Thank you for signing up with us. \n please enter your username to login: ")
+        password_login = input("Please enter your password: ")   
+
+
 
 
 
