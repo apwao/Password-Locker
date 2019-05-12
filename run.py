@@ -110,22 +110,22 @@ def main():
                     while True:
                         short_code = input("Use these shortcodes to choose an action: \n cc- create new credential \n delc - delete credential \n fc - find credential \n cp - copy credential \n ex - exit credentials \n dc -display credential :\n ").lower()
 
-                            if short_code == "cc":
-                                print("New Credential:")
+                        if short_code == "cc":
+                            print("New Credential:")
 
-                                username = input("Please enter your user name: \n")
-                                accountname = input("Please enter your account name: \n")
-                                password_choice = input("Would you like to have your password auto-generated? y/n : \n ").lower()
+                            username = input("Please enter your user name: \n")
+                            accountname = input("Please enter your account name: \n")
+                            password_choice = input("Would you like to have your password auto-generated? y/n : \n ").lower()
 
-                                # Password generator
-                                if password_choice == "n":
-                                    password = input("Please enter your password: \n") 
+                            # Password generator
+                            if password_choice == "n":
+                                password = input("Please enter your password: \n") 
 
-                                else: 
-                                    password_length = input("What length of password would you like to have? \n ")
-                                    random_password = []
-                                    for i in range (0, int(password_length)): #loop through the number of times equal to preferred length of password
-                                        random_password.append(random.randint(0,9))
+                            else: 
+                                password_length = input("What length of password would you like to have? \n ")
+                                random_password = []
+                                for i in range (0, int(password_length)): #loop through the number of times equal to preferred length of password
+                                    random_password.append(random.randint(0,9))
                                     
                                     def convert (random_password):
                                         converted = [str(i) for i in random_password]
@@ -141,56 +141,57 @@ def main():
                                         print(f"credentials successfully saved! \n {username} \n {accountname} \n {password}") 
                                         print("--" * 10)
 
-                            elif short_code == "dc":
-                                if displayCredentials():
-                                    print("Here is a list of all your credentials: \n")
-                                    print("--" * 10)
-                                    for credential in displayCredentials():
-                                        print(f"{credential.username} \n {credential.accountname} \n {credential.passwor}")
+                        elif short_code == "dc":
+                            if displayCredentials():
+                                print("Here is a list of all your credentials: \n")
+                                print("--" * 10)
+                                for credential in displayCredentials():
+                                    print(f"{credential.username} \n {credential.accountname} \n {credential.passwor}")
 
                                 else:
                                     print("You dont seem to have any credentials saved")
                             
-                            elif short_code == "fc":
-                                search_accountname = input("Please enter the account you want to search for: \n")
-                                if credentialExists(search_accountname):
-                                    found_credential = findCredential(search_accountname)
-                                    print("Account searched \n")
-                                    print("-- \n" * 10)
-                                    print (f"Username: {found_credential.username} \n Accountname: {found_credential.accountname} \n Password: {found_credential.password}")
-                                else:
-                                    print("That credential does not exist")
+                        elif short_code == "fc":
+                            search_accountname = input("Please enter the account you want to search for: \n")
+                            if credentialExists(search_accountname):
+                                found_credential = findCredential(search_accountname)
+                                print("Account searched \n")
+                                print("-- \n" * 10)
+                                print (f"Username: {found_credential.username} \n Accountname: {found_credential.accountname} \n Password: {found_credential.password}")
+                            else:
+                                print("That credential does not exist")
 
-                            elif short_code == "cp":
-                                copy_account_name = input("Please enter your accountname: ")
-                                if credentialExists(copy_account_name):
+                        elif short_code == "cp":
+                            copy_account_name = input("Please enter your accountname: ")
+                            if credentialExists(copy_account_name):
 
-                                    copy_choices = input("What would you like to copy from {}? \n pd - Password \n us - username \n ac - accountname \n".format(copy_account_name)).lower()
-                                    if copy_choices == "us":
-                                        copyUsername(copy_account_name)
-                                        print("Username successfully copied!")
-                                    elif copy_choices == "pd":
-                                        copyPassword(copy_account_name)
-                                        print("Password successfully copied!")
-                                    elif copy_choices == "ac"
+                                copy_choices = input("What would you like to copy from {}? \n pd - Password \n us - username \n ac - accountname \n".format(copy_account_name)).lower()
+                                if copy_choices == "us":
+                                    copyUsername(copy_account_name)
+                                    print("Username successfully copied!")
+                                elif copy_choices == "pd":
+                                    copyPassword(copy_account_name)
+                                    print("Password successfully copied!")
+
+                                elif copy_choices == "ac":
                                         copyAccountname(copy_account_name)
                                         print("Account-name successfully copied!")
                                 else: 
                                     print("{} account does not exist!".format(copy_account_name))
 
-                            elif short_code == "delc":
-                                search_accountname = input("Please enter the account you would like deleted: \n")
-                                if credentialExists(search_accountname):
-                                    found_credential = findCredential(search_accountname) 
-                                    deleteCredential(found_credential)
-                                    print(f"{search_accountname} has successfully been deleted")
+                        elif short_code == "delc":
+                            search_accountname = input("Please enter the account you would like deleted: \n")
+                            if credentialExists(search_accountname):
+                                found_credential = findCredential(search_accountname) 
+                                deleteCredential(found_credential)
+                                print(f"{search_accountname} has successfully been deleted")
 
-                                else:
-                                    print(f"{search_accountname} does not exist")
+                            else:
+                                print(f"{search_accountname} does not exist")
 
-                            elif short_code == "ex":
-                                print("Exiting credentials........")
-                                break
+                        elif short_code == "ex":
+                            print("Exiting credentials........")
+                            break
                             
             else: 
                 print("Incorrect username or password")
@@ -198,6 +199,10 @@ def main():
         elif userShortCodes == "ex":
             print("Logging out.......")
             break
+
+
+if __name__ == '__main__':
+    main()
 
                              
 
