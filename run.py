@@ -37,4 +37,12 @@ def deleteCredential(credential):
     """
     credential.delete_credntial()
 
+def findCredential(account_name):
+    """
+    findCredential function to search for a credential by accountname and 
+    return all its details
+    """
+    return Credential.find_accountname(account_name)
+    
+
 
