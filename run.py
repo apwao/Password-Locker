@@ -17,3 +17,17 @@ def create_user(name, login_password):
     """
     new_user = User(name,login_password)
     return new_user
+
+def saveCredential(credential):
+    """
+    saveCredential function to save the credential created by the user
+    """
+    credential.save_credential()
+
+def saveUser(user):
+    """
+    saveUser function to create a user account whenever a user
+    signs up with password locker
+    """
+    new_user = user.save_user
+
