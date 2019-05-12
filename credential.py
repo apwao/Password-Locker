@@ -16,4 +16,12 @@ class Credential:
         accountname: Name of the account being added
         password: Password for the account being added
         """
-        
+        self.username = username
+        self.accountname = accountname
+        self.password = password
+
+    def save_credential(self):
+        """
+        save_credential method to help a user save a credential
+        """
+        Credential.credentials.append(self)
