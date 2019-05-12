@@ -25,3 +25,9 @@ class Credential:
         save_credential method to help a user save a credential
         """
         Credential.credentials.append(self)
+
+    def delete_credential(self):
+        """
+        delete_method to help a user delete an existing credential
+        """
+        Credential.credentials.remove(self)
