@@ -150,6 +150,20 @@ def main():
 
                                 else:
                                     print("You dont seem to have any credentials saved")
+                            
+                            elif short_code == "fc":
+                                search_accountname = input("Please enter the account you want to search for: \n")
+                                if credentialExists(search_accountname):
+                                    found_credential = findCredential(search_accountname)
+                                    print("Account searched \n")
+                                    print("-- \n" * 10)
+                                    print (f"Username: {found_credential.username} \n Accountname: {found_credential.accountname} \n Password: {found_credential.password}")
+                                else:
+                                    print("That credential does not exist")
+
+                            
+
+
 
 
 
