@@ -88,5 +88,30 @@ class TestCredential(unittest.TestCase):
         test_credential = Credential("Lucas", "Twitter", "lwairore")
         test_credential.save_credential()
         self.assertEqual(Credential.display_credentials(), Credential.credentials)
-        
+
+    def test_copy_username(self):
+        """
+        test_copy_username to test if user can copy their username to their machine clipboard
+        """
+        self.new_credential.save_credential()
+        Credential.copy_accountname("Pinterest")
+        self.assertEqual(self.new_credential.username, pyperclip.paste())
+
+    def test_copy_accountname(self):
+        """
+        test_copy_accountname to test if user can copy their accountname to their machine clipboard
+        """
+
+        self.new_credential.save_credential()
+        Credential.copy_accountname("Pinterest")
+        self.assertEqual(self.new_credential.accountname,pyperclip.paste())
+    
+     def test_copy_password(self):
+        """
+        test_copy_password to test if user can copy their password to their machine clipboard
+        """
+
+        self.new_credential.save_credential()
+        Credential.copy_password("Pinterest")
+        self.assertEqual(self.new_credential.password,pyperclip.paste())
 
