@@ -43,6 +43,14 @@ def findCredential(account_name):
     return all its details
     """
     return Credential.find_accountname(account_name)
-    
+
+def credentialExists(account_name):
+    """
+    credentialExists function to check whether a credential exists
+    and return True or False
+    """
+    return Credential.credential_exists(account_name)
+
+
 
 
