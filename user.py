@@ -23,7 +23,7 @@ class User:
         User.users.append(self)
 
     @classmethod
-    def display_all(cls)
+    def display_all(cls):
         """
         display_all method that helps user view their account details
         """
