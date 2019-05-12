@@ -179,7 +179,17 @@ def main():
                                     print("{} account does not exist!".format(copy_account_name))
 
                             elif short_code == "delc":
-                                search_accountname = input("Please ")
+                                search_accountname = input("Please enter the account you would like deleted: \n")
+                                if credentialExists(search_accountname):
+                                    found_credential = findCredential(search_accountname) 
+                                    deleteCredential(found_credential)
+                                    print(f"{search_accountname} has successfully been deleted")
+
+                                else:
+                                    print(f"{search_accountname} does not exist")
+
+                             
+
 
                             
 
