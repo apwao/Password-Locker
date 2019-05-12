@@ -51,6 +51,13 @@ def credentialExists(account_name):
     """
     return Credential.credential_exists(account_name)
 
+def displayCredentials():
+    """
+    displayCredentials function to display the credentials currently saved
+    """
+    return Credential.display_credentials()
+    
+
 
 
 
