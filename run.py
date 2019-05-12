@@ -191,6 +191,13 @@ def main():
                             elif short_code == "ex":
                                 print("Exiting credentials........")
                                 break
+                            
+            else: 
+                print("Incorrect username or password")
+
+        elif userShortCodes == "ex":
+            print("Logging out.......")
+            break
 
                              
 
