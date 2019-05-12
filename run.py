@@ -29,5 +29,12 @@ def saveUser(user):
     saveUser function to create a user account whenever a user
     signs up with password locker
     """
-    new_user = user.save_user
+    user.save_user
+
+def deleteCredential(credential):
+    """
+    deleteCredential function that helps user delete an existing credential
+    """
+    credential.delete_credntial()
+
 
