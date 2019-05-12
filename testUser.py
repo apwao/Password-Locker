@@ -1,0 +1,22 @@
+from user import User    #importing the unittest module
+import unittest         #importing the User class
+
+class TestUser(unittest.TestCase):
+    """
+    Test class that defines the test cases for the user class behaviours
+
+    Args:
+    unittest.TestCase: TestCase class that helps in creating test cases
+    """
+    def setUp(self):
+        """
+        Set up method to run before each test case.
+        """
+        self .new_user = User("Christine", "tina56")
+
+    def tearDown(self):
+        """
+        Tear down method that cleans up after each test case has run
+        """
+        
+
