@@ -161,6 +161,26 @@ def main():
                                 else:
                                     print("That credential does not exist")
 
+                            elif short_code == "cp":
+                                copy_account_name = input("Please enter your accountname: ")
+                                if credentialExists(copy_account_name):
+
+                                    copy_choices = input("What would you like to copy from {}? \n pd - Password \n us - username \n ac - accountname \n".format(copy_account_name)).lower()
+                                    if copy_choices == "us":
+                                        copyUsername(copy_account_name)
+                                        print("Username successfully copied!")
+                                    elif copy_choices == "pd":
+                                        copyPassword(copy_account_name)
+                                        print("Password successfully copied!")
+                                    elif copy_choices == "ac"
+                                        copyAccountname(copy_account_name)
+                                        print("Account-name successfully copied!")
+                                else: 
+                                    print("{} account does not exist!".format(copy_account_name))
+
+                            elif short_code == "delc":
+                                search_accountname = input("Please ")
+
                             
 
 
